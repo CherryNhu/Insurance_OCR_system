@@ -44,13 +44,15 @@ An end-to-end solution that automates insurance document processing:
 - Python 3.8+
 - Tesseract OCR ([Windows installer](https://github.com/UB-Mannheim/tesseract/wiki))   # Remember its location
 - Poppler ([Windows binaries](https://github.com/oschwartz10612/poppler-windows/releases))   # Remember its location
-
-### Setup
-```On the computer
-# Need system variables to use everywhere
+#### On my computer, need to setup Environment Variables to use everywhere
 window + R -> sysdm.cpl -> Advanced -> Environment Variables -> Path (System Variables) -> Edit -> New
 - Tesseract OCR: path\Tesseract-OCR
 - Poppler: path\Release-24.08.0-0\poppler-24.08.0-0\Library\bin
+
+### Setup
+```File main.py, change:
+- TESSERACT_PATH = r'path\Tesseract-OCR\tesseract.exe'
+- POPPLER_PATH = r"path\Release-24.08.0-0\poppler-24.08.0\Library\bin" if os.path.exists(r"path\Release-24.08.0-0\poppler-24.08.0\Library\bin") else None
 
 ```bash
 # Clone repository
