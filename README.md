@@ -2,7 +2,7 @@
 
 **Automated document processing for insurance workflows using AI-powered OCR technology**
 
-![Demo Screenshot](https://via.placeholder.com/800x400?text=Insurance+OCR+Demo+Preview)
+## Demo screenshot (Above)
 
 ## 📌 Introduction
 
@@ -42,21 +42,28 @@ An end-to-end solution that automates insurance document processing:
 
 ### Prerequisites
 - Python 3.8+
-- Tesseract OCR ([Windows installer](https://github.com/UB-Mannheim/tesseract/wiki))
-- Poppler ([Windows binaries](https://github.com/oschwartz10612/poppler-windows/releases))
+- Tesseract OCR ([Windows installer](https://github.com/UB-Mannheim/tesseract/wiki))   # Remember its location
+- Poppler ([Windows binaries](https://github.com/oschwartz10612/poppler-windows/releases))   # Remember its location
 
 ### Setup
+```On the computer
+# Need system variables to use everywhere
+window + R -> sysdm.cpl -> Advanced -> Environment Variables -> Path (System Variables) -> Edit -> New
+- Tesseract OCR: path\Tesseract-OCR
+- Poppler: path\Release-24.08.0-0\poppler-24.08.0-0\Library\bin
+
 ```bash
 # Clone repository
 git clone https://github.com/yourrepo/insurance-ocr.git
 cd insurance-ocr
 
+# Should create a virtual environment to avoid conflict
+# Command Prompt terminal
+python -m venv env # Can change the environment name "env" to what you want
+venv\Scritps\activate
+
 # Install dependencies
 pip install -r requirements.txt
-
-# Configure environment variables
-echo "TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe" >> .env
-echo "POPPLER_PATH=C:\poppler-24.08.0\Library\bin" >> .env
 
 # Run the application
 streamlit run app.py
