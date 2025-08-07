@@ -48,12 +48,11 @@ An end-to-end solution that automates insurance document processing:
 window + R -> sysdm.cpl -> Advanced -> Environment Variables -> Path (System Variables) -> Edit -> New
 - Tesseract OCR: path\Tesseract-OCR
 - Poppler: path\Release-24.08.0-0\poppler-24.08.0-0\Library\bin
-
-### Setup
-```File main.py, change:
+#### File main.py, change:
 - TESSERACT_PATH = r'path\Tesseract-OCR\tesseract.exe'
 - POPPLER_PATH = r"path\Release-24.08.0-0\poppler-24.08.0\Library\bin" if os.path.exists(r"path\Release-24.08.0-0\poppler-24.08.0\Library\bin") else None
 
+### Setup
 ```bash
 # Clone repository
 git clone https://github.com/yourrepo/insurance-ocr.git
